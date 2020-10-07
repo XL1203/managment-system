@@ -21,7 +21,7 @@
             <el-input
               type="password"
               v-model="loginForm.password"
-              prefix-icon="el-icon-lock"
+              prefix-icon="iconfont icon-3702mima"
             ></el-input>
           </el-form-item>
           <!-- 按钮区 -->
