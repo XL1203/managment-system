@@ -39,10 +39,10 @@
 
             <!-- 二级菜单 -->
             <el-menu-item
-              :index="'/'+subItem.path"
+              :index="'/' + subItem.path"
               v-for="subItem in item.children"
               :key="subItem.id"
-              @click="savaNavState('/'+subItem.path)"
+              @click="savaNavState('/' + subItem.path)"
             >
               <template slot="title">
                 <i class="el-icon-menu"></i>
@@ -75,7 +75,7 @@ export default {
         145: 'iconfont icon-baobiao',
       },
       //被激活的链接地址
-      activePath:''
+      activePath: '',
     }
   },
   methods: {
@@ -91,14 +91,14 @@ export default {
       if (res.meta.status !== 200) return this.$msg.error(res.meta.msg)
       this.menuList = res.data
     },
-    savaNavState(activePath){
-      window.sessionStorage.setItem('activePath',activePath)
-      this.activePath=activePath
-    }
+    savaNavState(activePath) {
+      this.activePath = activePath
+      window.sessionStorage.setItem('activePath', activePath)
+    },
   },
   created() {
     this.getMuneList()
-    this.activePath=window.sessionStorage.getItem('activePath')
+    this.activePath = window.sessionStorage.getItem('activePath')
   },
 }
 </script>

@@ -10,22 +10,7 @@
     <!-- 卡片区域 -->
     <el-card class="box-card">
       <el-row :gutter="20">
-        <el-col :span="12">
-          <el-input
-            placeholder="请输入内容"
-            class="input-with-select"
-            v-model.trim="roleId"
-            clearable
-            @clear="getRolesList"
-          >
-            <el-button
-              slot="append"
-              icon="el-icon-search"
-              @click="getRoleById(roleId)"
-            ></el-button>
-          </el-input>
-        </el-col>
-        <el-col :span="4">
+        <el-col>
           <!-- 添加角色按钮 -->
           <el-button type="primary" @click="addUserRoleDialogVisible = true"
             >添加角色</el-button
@@ -205,6 +190,7 @@ export default {
       editUserRoleForm: {},
       //角色列表
       rolesList: [],
+      roleName: '',
       //控制权限对话框是否显示
       rightDialogVisible: false,
       //所有权限的数据
@@ -227,7 +213,6 @@ export default {
 
       if (res.meta.status !== 200) return this.$msg.error('获取失败')
       this.rolesList = res.data
-      console.log(  this.rolesList);
     },
     //添加角色
     async addRole() {
