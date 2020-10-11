@@ -256,7 +256,6 @@ export default {
         type: 'warning',
       }).catch((err) => err)
 
-      console.log(result)
       if (result !== 'confirm') return this.$msg.info('取消了删除！')
       const { data: res } = await this.$http.delete(`roles/${id}`)
       if (res.meta.status !== 200) return this.$msg.error('删除失败！')

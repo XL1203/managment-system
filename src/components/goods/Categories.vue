@@ -94,7 +94,7 @@
           <!-- v-model 指定一个数组 -->
           <el-cascader
             v-model="selectedKeys"
-            :options="parentcateList"
+       :options="parentcateList"
             :props="cascaderProps"
             @change="parentCateChange"
             clearable
