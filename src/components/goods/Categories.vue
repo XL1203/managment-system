@@ -256,7 +256,6 @@ export default {
         `categories/${this.editCateForm.cat_id}`,
         this.editCateForm
       )
-      console.log(res);
       if (res.meta.status !== 200) return this.$msg.error('修改商品分类失败！')
       this.$msg.success('修改商品分类成功！')
       this.editCateDialogVisible = false
